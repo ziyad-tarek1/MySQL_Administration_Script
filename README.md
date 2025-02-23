@@ -2,6 +2,22 @@
 
 **A powerful Python-based CLI tool for managing MySQL databases, tables, and users.**
 
+![MySQL Administration Script Banner](assets/banner.png)
+
+---
+
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [How to Use](#how-to-use)
+- [Detailed Command Explanations](#detailed-command-explanations)
+- [Complex Showcase](#complex-showcase)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
+- [Future Features](#future-features)
+- [Support](#support)
+
 ---
 
 ## Features
@@ -376,6 +392,22 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
   ![GitHub Avatar](https://avatars.githubusercontent.com/ziyad-tarek1)  
   GitHub: [ziyad-tarek1](https://github.com/ziyad-tarek1)  
   Email: ziyadtarek180@gmail.com
+
+---
+
+## Future Features
+
+- **Backup and Restore**: Add functionality to backup and restore databases.
+- **Export Data**: Export table data to CSV or JSON.
+- **Interactive Mode**: Add an interactive mode for easier navigation.
+
+---
+
+## Support
+
+If you encounter any issues or have questions, feel free to:
+- Open an issue on [GitHub](https://github.com/ziyad-tarek1/MySQL_Administration_Script/issues).
+- Email me at ziyadtarek180@gmail.com.
 
 ---
 
