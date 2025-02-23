@@ -2,7 +2,8 @@
 
 **A powerful Python-based CLI tool for managing MySQL databases, tables, and users.**
 
-![MySQL Administration Script Banner](assets/banner.png)
+![image](https://github.com/user-attachments/assets/186f61ca-b8fa-42d9-bc5c-04d21459374b)
+
 
 ---
 
