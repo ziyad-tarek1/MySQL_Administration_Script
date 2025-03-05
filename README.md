@@ -793,16 +793,16 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Authors
 
-- **ziyad-tarek1**
-  - GitHub: [ziyad-tarek1](https://github.com/ziyad-tarek1)
+- **Ziyad Tarek**
+  - GitHub: [Ziyad Tarek](https://github.com/ziyad-tarek1)
   - Email: ziyadtarek180@gmail.com
 
-- **mohamedmahmoud**
-  - GitHub: [Mo-5054](https://github.com/Mo-5054)
+- **Mohamed Mahmoud**
+  - GitHub: [Mohamed Mahmoud](https://github.com/Mo-5054)
   - Email: mohamedmahmoud6498@gmail.com
 
-- **Muhammed-Galal-Zalat**
-  - GitHub: [Muhammed-Galal-Zalat](https://github.com/Muhammed-Galal-Zalat)
+- **Muhammed Galal Zalat**
+  - GitHub: [Muhammed Galal Zalat](https://github.com/Muhammed-Galal-Zalat)
   - Email: mohmed.galal.zalat.mz@gmail.com
 
 ---
