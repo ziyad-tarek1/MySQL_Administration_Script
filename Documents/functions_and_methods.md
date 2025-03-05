@@ -111,8 +111,8 @@
 
 ---
 
-### Example Usage in Your Code
-Here’s how these functions and methods are used in your script:
+### Example Usage in The Code
+Here’s how these functions and methods are used in The script:
 
 1. **Connecting to MySQL**:
    ```python
