@@ -2,6 +2,9 @@
 
 Welcome to the MySQL Administration Script! This Python-based tool allows you to manage your MySQL databases with ease. It provides a wide range of functionalities, from listing databases and tables to creating users and managing privileges. Below, you'll find a detailed guide on how to use this script, including code snippets, explanations, and examples.
 
+![d541b959-12db-4adb-9e57-b447a19d4595](https://github.com/user-attachments/assets/a2219827-5860-4b4e-b376-4f216b769d97)
+
+
 ---
 
 ## Table of Contents
