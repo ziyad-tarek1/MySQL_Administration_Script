@@ -805,7 +805,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
   - Email: mohamedmahmoud6498@gmail.com
 
 - **Muhammed Galal Zalat**
-  - GitHub: [Muhammed Galal Zalat](https://github.com/Muhammed-Galal-Zalat)
+  - GitHub: [Muhammed Galal Zalat](https://github.com/Muhammed-Zalat)
   - Email: mohmed.galal.zalat.mz@gmail.com
 
 ---
