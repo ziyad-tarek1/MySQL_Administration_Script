@@ -40,6 +40,9 @@ Welcome to the MySQL Administration Script! This Python-based tool allows you to
 
 This script is designed to simplify MySQL database management tasks. It connects to a MySQL server using credentials stored in `config.py` and provides a command-line interface (CLI) for performing various operations. The script is modular, with each function handling a specific task, making it easy to extend or modify.
 
+![image](https://github.com/user-attachments/assets/09f15679-6f6b-46ee-8ca7-6eea36c74424)
+
+
 ---
 
 ## Installation
