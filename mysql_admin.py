@@ -380,7 +380,7 @@ def main():
         print("6. Delete a table")
         print("7. Describe a table")
         print("8. Insert data into a table")
-        print("9. Select data from a table")
+        print("9. Display data from a table")
         print("10. Update data in a table")
         print("11. Delete data from a table")
         print("12. Search data in a table")
