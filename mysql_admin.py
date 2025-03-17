@@ -183,7 +183,7 @@ def insert_data():
     while True:
         try:
             print("Leave the Table name empty to return to the main menu")
-            table_name = input("Enter table name :  ")
+            table_name = input("Enter table name: ")
             if not table_name:
                 print("return to the menu.")
                 return           
@@ -212,7 +212,7 @@ def select_data():
     while True:
         try:
             print("Leave the Table name empty to return to the main menu")
-            table_name = input("Enter table name :  ")
+            table_name = input("Enter table name: ")
             if not table_name:
                 print("return to the menu.")
                 return  
@@ -235,7 +235,7 @@ def update_data():
     while True:
         try:
             print("Leave the Table name empty to return to the main menu")
-            table_name = input("Enter table name :  ")
+            table_name = input("Enter table name: ")
             if not table_name:
                 print("return to the menu.")
                 return  
@@ -260,7 +260,7 @@ def delete_data():
     while True:
         try:
             print("Leave the Table name empty to return to the main menu")
-            table_name = input("Enter table name :  ")
+            table_name = input("Enter table name: ")
             if not table_name:
                 print("return to the menu.")
                 return  
@@ -308,7 +308,7 @@ def flexible_search():
     while True:
         try:
             print("Leave the Table name empty to return to the main menu")
-            table_name = input("Enter table name : :  ")
+            table_name = input("Enter table name : ")
             if not table_name:
                 print("return to the menu.")
                 return
@@ -382,14 +382,13 @@ def database_exists(database):
 
 
 
-
+# Function to grant privileges to a user
 def grant_privileges():
     while True:
         response = input("Are you sure you want to grant privileges to a user? (yes/no): ").lower()
         if response not in {'yes', 'y'}:
             print("Operation cancelled.")
             return
-
         try:
             username = input("Enter username: ")
             host = input("Enter host (default: localhost): ") or "localhost"
