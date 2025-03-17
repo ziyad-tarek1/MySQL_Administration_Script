@@ -20,7 +20,7 @@ Welcome to the MySQL Administration Script! This Python-based tool allows you to
    - [6. Delete a table](#6-delete-a-table)
    - [7. Describe a table](#7-describe-a-table)
    - [8. Insert data into a table](#8-insert-data-into-a-table)
-   - [9. Select data from a table](#9-select-data-from-a-table)
+   - [9. Display data from a table](#9-display-data-from-a-table)
    - [10. Update data in a table](#10-update-data-in-a-table)
    - [11. Delete data from a table](#11-delete-data-from-a-table)
    - [12. Search data in a table](#12-search-data-in-a-table)
@@ -401,7 +401,7 @@ Data inserted successfully!
 
 ---
 
-### 9. Select Data from a Table
+### 9. display Data from a Table
 
 **Function**: `select_data()`
 
