@@ -249,7 +249,11 @@ def create_table():
         return
     while True:
         try:
+            print("Leave the Table name empty to return to the main menu")
             table_name = input("Enter table name: ")
+            if not table_name:
+                print("return to the menu.")
+                return
             columns = input("Enter columns (e.g., id INT PRIMARY KEY, name VARCHAR(255)): ")
             query = f"CREATE TABLE {table_name} ({columns})"
             cursor.execute(query)
@@ -286,10 +290,14 @@ Table 'users' created successfully!
 ```python
 def delete_table():
     if not check_database_selected():
-        return
+        return  
     while True:
         try:
+            print("Leave the Table name empty to return to the main menu")
             table_name = input("Enter table name to delete: ")
+            if not table_name:
+                print("return to the menu.")
+                return
             query = f"DROP TABLE {table_name}"
             cursor.execute(query)
             conn.commit()
@@ -368,7 +376,11 @@ def insert_data():
         return
     while True:
         try:
-            table_name = input("Enter table name: ")
+            print("Leave the Table name empty to return to the main menu")
+            table_name = input("Enter table name :  ")
+            if not table_name:
+                print("return to the menu.")
+                return           
             cursor.execute(f"DESCRIBE {table_name}")
             columns = [col[0] for col in cursor.fetchall()]
             values = []
@@ -411,10 +423,14 @@ Data inserted successfully!
 ```python
 def select_data():
     if not check_database_selected():
-        return
+        return    
     while True:
         try:
-            table_name = input("Enter table name: ")
+            print("Leave the Table name empty to return to the main menu")
+            table_name = input("Enter table name :  ")
+            if not table_name:
+                print("return to the menu.")
+                return  
             query = f"SELECT * FROM {table_name}"
             cursor.execute(query)
             rows = cursor.fetchall()
@@ -451,13 +467,17 @@ Enter table name: users
 ```python
 def update_data():
     if not check_database_selected():
-        return
+        return  
     while True:
         try:
-            table_name = input("Enter table name: ")
+            print("Leave the Table name empty to return to the main menu")
+            table_name = input("Enter table name :  ")
+            if not table_name:
+                print("return to the menu.")
+                return  
             column = input("Enter column to update: ")
             new_value = input(f"Enter new value for {column}: ")
-            condition = input(f"Enter condition (e.g., {column}=1): ")
+            condition = input(f'Enter condition (e.g., {column}=1 , for string use {column}="name" ): ')
             query = f"UPDATE {table_name} SET {column} = %s WHERE {condition}"
             cursor.execute(query, (new_value,))
             conn.commit()
@@ -498,7 +518,11 @@ def delete_data():
         return
     while True:
         try:
-            table_name = input("Enter table name: ")
+            print("Leave the Table name empty to return to the main menu")
+            table_name = input("Enter table name :  ")
+            if not table_name:
+                print("return to the menu.")
+                return  
             condition = input("Enter condition to delete (e.g., id=1): ")
             query = f"DELETE FROM {table_name} WHERE {condition}"
             cursor.execute(query)
@@ -538,7 +562,11 @@ def search_data():
         return
     while True:
         try:
+            print("Leave the Table name empty to return to the main menu")
             table_name = input("Enter table name: ")
+            if not table_name:
+                print("return to the menu.")
+                return
             condition = input("Enter search condition (e.g., name='John'): ")
             query = f"SELECT * FROM {table_name} WHERE {condition}"
             cursor.execute(query)
@@ -579,8 +607,13 @@ def flexible_search():
         return
     while True:
         try:
-            table_name = input("Enter table name: ")
+            print("Leave the Table name empty to return to the main menu")
+            table_name = input("Enter table name : :  ")
+            if not table_name:
+                print("return to the menu.")
+                return
             condition = input("Enter search condition (e.g., name LIKE '%John%'): ")
+
             query = f"SELECT * FROM {table_name} WHERE {condition}"
             cursor.execute(query)
             rows = cursor.fetchall()
@@ -618,18 +651,24 @@ Enter search condition: name LIKE '%John%'
 ```python
 def create_user():
     while True:
-        try:
-            username = input("Enter new username: ")
-            password = input("Enter password: ")
-            host = input("Enter host (default: localhost): ") or "localhost"
-            cursor.execute(f"CREATE USER '{username}'@'{host}' IDENTIFIED BY '{password}'")
-            conn.commit()
-            print(f"User '{username}' created successfully!")
-            break
-        except mysql.connector.Error as err:
-            print(f"Error: {err}. Please check your inputs and try again.")
-        except Exception as e:
-            print(f"Unexpected error: {e}. Please try again.")
+        response = input("Are you sure you want to create a new user? (yes/no): ").lower()
+        if response in {'yes', 'y'}:       
+            try:
+                username = input("Enter new username: ")
+                password = input("Enter password: ")
+                host = input("Enter host (default: localhost): ") or "localhost"
+                
+                cursor.execute(f"CREATE USER '{username}'@'{host}' IDENTIFIED BY '{password}'")
+                conn.commit()
+                print(f"User '{username}' created successfully!")
+                break
+            except mysql.connector.Error as err:
+                print(f"Error: {err}. Please check your inputs and try again.")
+            except Exception as e:
+                print(f"Unexpected error: {e}. Please try again.")
+        else:
+            print("Creation canceled.")
+            return  
 ```
 
 **Usage**:
@@ -657,17 +696,23 @@ User 'new_user' created successfully!
 ```python
 def delete_user():
     while True:
-        try:
-            username = input("Enter username to delete: ")
-            host = input("Enter host (default: localhost): ") or "localhost"
-            cursor.execute(f"DROP USER '{username}'@'{host}'")
-            conn.commit()
-            print(f"User '{username}' deleted successfully!")
-            break
-        except mysql.connector.Error as err:
-            print(f"Error: {err}. Please check your inputs and try again.")
-        except Exception as e:
-            print(f"Unexpected error: {e}. Please try again.")
+        response = input("Are you sure you want to delete a user? (yes/no): ").lower()
+        if response in {'yes', 'y'}:    
+            try:
+                username = input("Enter username to delete: ")
+                host = input("Enter host (default: localhost): ") or "localhost"
+                
+                cursor.execute(f"DROP USER '{username}'@'{host}'")
+                conn.commit()
+                print(f"User '{username}' deleted successfully!")
+                break
+            except mysql.connector.Error as err:
+                print(f"Error: {err}. Please check your inputs and try again.")
+            except Exception as e:
+                print(f"Unexpected error: {e}. Please try again.")
+        else:
+            print("Deletion has been canceled.")
+            return  
 ```
 
 **Usage**:
@@ -694,17 +739,34 @@ User 'new_user' deleted successfully!
 ```python
 def grant_privileges():
     while True:
+        response = input("Are you sure you want to grant privileges to a user? (yes/no): ").lower()
+        if response not in {'yes', 'y'}:
+            print("Operation cancelled.")
+            return
+
         try:
             username = input("Enter username: ")
             host = input("Enter host (default: localhost): ") or "localhost"
+            if not user_exists(username, host):
+                print(f"Error: User '{username}' does not exist on host '{host}'.")
+                continue
             database = input("Enter database name: ")
-            privileges = input("Enter privileges (e.g., SELECT, INSERT, UPDATE): ")
-            cursor.execute(f"GRANT {privileges} ON {database}.* TO '{username}'@'{host}'")
-            conn.commit()
-            print(f"Privileges granted to '{username}' successfully!")
-            break
+            if not database_exists(database):
+                print(f"Error: Database '{database}' does not exist.")
+                continue
+            privileges = input("Enter privileges (e.g., SELECT, INSERT, UPDATE): ").upper()        
+            confirmation = input(f"Are you sure you want to grant privileges {privileges} to {username}? (yes/no): ").lower()
+            if confirmation in {'yes', 'y'}:
+                cursor.execute(f"GRANT {privileges} ON {database}.* TO '{username}'@'{host}'")
+                conn.commit()
+                print(f"Privileges granted to '{username}' successfully!")
+                break
+            else:
+                print("Operation cancelled.")
+                return
+
         except mysql.connector.Error as err:
-            print(f"Error: {err}. Please check your inputs and try again.")
+            print(f"Database error: {err}. Please check your inputs and try again.")
         except Exception as e:
             print(f"Unexpected error: {e}. Please try again.")
 ```
@@ -735,19 +797,35 @@ Privileges granted to 'new_user' successfully!
 ```python
 def revoke_privileges():
     while True:
-        try:
-            username = input("Enter username: ")
-            host = input("Enter host (default: localhost): ") or "localhost"
-            database = input("Enter database name: ")
-            privileges = input("Enter privileges to revoke (e.g., SELECT, INSERT, UPDATE): ")
-            cursor.execute(f"REVOKE {privileges} ON {database}.* FROM '{username}'@'{host}'")
-            conn.commit()
-            print(f"Privileges revoked from '{username}' successfully!")
-            break
-        except mysql.connector.Error as err:
-            print(f"Error: {err}. Please check your inputs and try again.")
-        except Exception as e:
-            print(f"Unexpected error: {e}. Please try again.")
+        response = input("Are you sure you want to revoke privileges from a user? (yes/no): ").lower()
+        if response in {'yes', 'y'}: 
+            try:
+                username = input("Enter username: ")
+                host = input("Enter host (default: localhost): ") or "localhost"
+                if not user_exists(username, host):
+                    print(f"Error: User '{username}' does not exist on host '{host}'.")
+                    continue
+                database = input("Enter database name: ")
+                if not database_exists(database):
+                    print(f"Error: Database '{database}' does not exist.")
+                    continue
+                privileges = input("Enter privileges to revoke (e.g., SELECT, INSERT, UPDATE): ").upper()
+                confirmation = input(f"Are you sure you want to revoke privileges {privileges} from {username}? (yes/no): ").lower()
+                if confirmation in {'yes', 'y'}:
+                    cursor.execute(f"REVOKE {privileges} ON {database}.* FROM '{username}'@'{host}'")
+                    conn.commit()
+                    print(f"Privileges revoked from '{username}' successfully!")
+                    break
+                else:
+                    print("operation cancelled")
+                    return
+            except mysql.connector.Error as err:
+                print(f"Error: {err}. Please check your inputs and try again.")
+            except Exception as e:
+                print(f"Unexpected error: {e}. Please try again.")
+        else:
+            print("operation cancelled")
+            return
 ```
 
 **Usage**:
